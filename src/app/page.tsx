@@ -277,7 +277,7 @@ export default function Home() {
 
   return (
 
-    <main className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
+    <main className="min-h-screen bg-gray-100 text-gray-900 flex flex-col items-center p-4">
       {showLanding && (
         <div className="mb-6 text-center">
           <h1 className="text-3xl font-bold">
@@ -301,7 +301,7 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-5xl">
         <div className="bg-white shadow-lg rounded-xl p-8">
 
-          <h1 className="text-3xl font-bold mb-4 text-center">
+          <h1 className="text-3xl font-bold mb-4 text-center text-gray-900">
             MarginLab
           </h1>
 
@@ -315,8 +315,7 @@ export default function Home() {
             <select
               value={platform}
               onChange={(e) => handlePlatformChange(e.target.value)}
-              className="border p-2 rounded w-full"
-            >
+              className="border p-2 rounded w-full">
               <option value="">Platform seç</option>
               <option value="trendyol">Trendyol</option>
               <option value="hepsiburada">Hepsiburada</option>
