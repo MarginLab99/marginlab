@@ -420,7 +420,7 @@ export default function Home() {
             </div>
             <button
               onClick={resetForm}
-              className="border border-gray-300 text-gray-700 p-3 rounded-lg hover:bg-gray-100 transition"
+              className="bg-gray-200 text-gray-800 p-3 rounded-lg hover:bg-gray-300 transition font-medium"
             >
               Sıfırla
             </button>
@@ -462,7 +462,7 @@ export default function Home() {
 
                 <button
                   onClick={() => setShippingCost(calculatedShipping.toFixed(2))}
-                  className="mt-2 text-xs bg-indigo-600 text-white px-3 py-1 rounded"
+                  className="mt-2 text-sm bg-indigo-600 px-4 py-2 text-white px-3 py-1 rounded"
                 >
                   Bu miktarı kargo maliyetine ekle
                 </button>
@@ -523,7 +523,7 @@ export default function Home() {
         <div className="sticky top-4 h-fit">
 
           {profit !== null && (
-            <div className={`bg-white shadow-xl rounded-2xl p-6 border ${profit < 0 ? "border-red-400" : "border-gray-200"
+            <div className={`bg-white shadow-md rounded-2xl p-5 border ${profit < 0 ? "border-red-200" : "border-gray-200"
               }`}>
 
 
@@ -533,7 +533,7 @@ export default function Home() {
               {/* NET KAR */}
               <p className="text-sm text-gray-500">Net Kâr</p>
 
-              <p className="text-2xl font-bold">
+              <p className="text-2xl font-semibold">
                 {profit.toLocaleString("tr-TR", {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2
@@ -542,7 +542,7 @@ export default function Home() {
 
               {/* MARJ */}
               <p className={`text-lg font-semibold mt-2 ${margin !== null && margin < 10
-                ? "text-red-600"
+                ? "text-red-500"
                 : margin !== null && margin < 20
                   ? "text-orange-500"
                   : "text-green-600"
@@ -557,14 +557,14 @@ export default function Home() {
               </p>
               <div className={`mt-4 p-4 rounded-lg border ${profit !== null && profit < 0
                 ? "bg-red-50 border-red-200"
-                : "bg-green-50 border-green-200"
+                : "bg-green-100 border-green-300"
                 }`}>
 
                 <p className="text-sm text-gray-600">
                   Platformdan Hesabınıza Aktarılacak Tahmini Tutar
                 </p>
 
-                <p className="text-xl font-bold text-green-700 mt-1">
+                <p className="text-xl font-bold text-green-800 mt-1">
                   💰 {netRevenue.toFixed(2)} TL
                 </p>
 
@@ -637,10 +637,12 @@ export default function Home() {
                         key={i}
                         className="flex justify-between text-sm py-2 border-b border-gray-200"
                       >
+                        className="mt-6 bg-white rounded-xl p-3"
                         <span>{p.name}</span>
 
                         <span
                           className={`font-medium ${result.netProfit < 0 ? "text-red-600" : "text-green-600"
+
                             }`}
 
                         >
