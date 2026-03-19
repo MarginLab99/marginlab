@@ -420,13 +420,13 @@ export default function Home() {
             </div>
             <button
               onClick={resetForm}
-              className="bg-gray-200 text-gray-800 p-3 rounded-lg hover:bg-gray-300 transition font-medium"
+              className="w-full mt-2 bg-gray-800 text-white py-3 rounded-lg font-medium"
             >
               Sıfırla
             </button>
 
           </div>
-          <div className="mt-6 p-4 border rounded-lg bg-gray-50">
+          <div className="mt-6 p-4 border rounded-xl bg-gray-50 shadow-sm">
 
             <p className="text-sm font-semibold">
               📦 Kargo Maliyeti Hesapla (Desi)
@@ -624,34 +624,34 @@ export default function Home() {
               )}
 
               {/* PLATFORM KARŞILAŞTIRMA */}
-              <div className="mt-6">
-                <h3 className="font-semibold mb-2 text-gray-700">
+              <div className="mt-6 bg-white rounded-xl p-3">
+                <h3 className="font-semibold mb-2 text-gray-800">
                   Platformlara Göre Net Kâr
                 </h3>
-                <div className="space-y-1">
-                  {platforms.map((p, i) => {
-                    const result = calculateForPlatform(p.rate);
 
-                    return (
-                      <div
-                        key={i}
-                        className="flex justify-between text-sm py-2 border-b border-gray-200"
+                {platforms.map((p, i) => {
+                  const result = calculateForPlatform(p.rate);
+
+                  return (
+                    <div
+                      key={i}
+                      className="flex justify-between items-center py-3 border-b border-gray-200"
+                    >
+                      <span className="text-sm text-gray-700">
+                        {p.name}
+                      </span>
+
+                      <span
+                        className={`text-sm font-semibold ${result.netProfit < 0
+                          ? "text-red-600"
+                          : "text-green-600"
+                          }`}
                       >
-                        className="mt-6 bg-white rounded-xl p-3"
-                        <span>{p.name}</span>
-
-                        <span
-                          className={`font-medium ${result.netProfit < 0 ? "text-red-600" : "text-green-600"
-
-                            }`}
-
-                        >
-                          {result.netProfit.toFixed(2)} TL
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
+                        {result.netProfit.toFixed(2)} TL
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* CSV SONUÇ */}
